@@ -4,7 +4,15 @@ Site created with use of [Django](https://www.djangoproject.com/), inspired by o
 
 ## How to run project on local server
 
-First, you need to install all required packages using command `$ pip install -r requirements.txt` \
+First, you need to clone this repository
+
+`git clone https://github.com/Style77/youwishw.xyz`
+
+and change directory
+
+`cd youwishw/youwishw`
+
+after cloning, you need to install all required packages using command `$ pip install -r requirements.txt` \
 then you have to migrate database using commands:
 
 `$ python manage.py makemigrations` and then `$ python manage.py migrate`
