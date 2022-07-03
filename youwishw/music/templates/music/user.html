@@ -1,0 +1,20 @@
+{% extends 'music/base.html' %}
+
+{% block title %}{{ user.username }} profile{% endblock %}
+
+{% block content %}
+<div class="container"><br>
+    <div class="card">
+        {{ user.username }}
+    </div>
+    <div class="card" id="songs">
+        <ul class="list-unstyled">
+            {% for song in user_songs %}
+                <li><a class="text-decoration-none" href="/{{ song.song_id }}">{{ song.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+</div>
+
+{% endblock %}

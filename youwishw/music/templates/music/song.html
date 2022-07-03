@@ -1,0 +1,17 @@
+{% extends 'music/base.html' %}
+
+{% block content %}
+<div class="container"><br>
+    <figure>
+      <blockquote class="blockquote">
+        <h1 class="display-6">{{ song.title }}</h1>
+      </blockquote>
+      <figcaption class="blockquote-footer">
+        by <cite title="Source Title">{{ song.author.username }}</cite>
+      </figcaption>
+    </figure>
+    <audio controls preload="none">
+        <source src="{{ song.file.url }}" type="audio/mpeg"></source>
+    </audio>
+</div>
+{% endblock %}

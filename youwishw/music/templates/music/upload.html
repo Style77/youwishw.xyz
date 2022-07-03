@@ -1,0 +1,23 @@
+{% extends 'music/base.html' %}
+
+{% block content %}
+<div class="container" style="margin: 15px;">
+    <div class="form-control">
+        {% for message in messages %}
+            <div class="alert alert-warning">{{message}}</div>
+        {% endfor %}
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for field in form.visible_fields %}
+                <div class="mb-3">
+                    {{ field.label_tag }} {{ field }}
+                </div>
+            {% endfor %}
+                {% for field in form.hidden_fields %}
+                    <div style="display:none;">{{ field }}</div>
+                {% endfor %}
+            <button type="submit" class="btn btn-dark">Upload</button>
+        </form>
+    </div>
+</div>
+{% endblock%}
