@@ -7,6 +7,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
 from django.urls import reverse
+from django_user_agents.utils import get_user_agent
 
 from .forms import UploadSongForm, CustomLoginForm
 from .models import Song
@@ -48,7 +49,13 @@ def logout_view(request):
 
 def song_details(request, song_id):
     song = Song.objects.get(song_id=song_id)
-    return render(request, 'music/song.html', {'song': song})
+
+    if get_user_agent(request).is_mobile:
+        template_name = 'music/song_mobile.html'
+    else:
+        template_name = 'music/song.html'
+
+    return render(request, template_name, {'song': song})
 
 
 @login_required

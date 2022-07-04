@@ -2,6 +2,8 @@
 
 Site created with use of [Django](https://www.djangoproject.com/), inspired by old [picosong](https://picosong.com/), and [Soundcloud](https://soundcloud.com/)
 
+You can see it working at http://130.61.236.179:8000/ or http://youwishw.xyz:8000/, if ICANN has already verified my Whois data 
+
 ## How to run project on local server
 
 First, you need to clone this repository
@@ -50,3 +52,4 @@ To get to admin panel just go to http://127.0.0.1:8000/admin
 
 ### Voilà
 <sub>made by [youwish](https://github.com/Style77) </sub>
+
